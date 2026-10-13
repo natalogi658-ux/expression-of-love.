@@ -1,0 +1,1415 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Expression of Love ♡</title>
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+
+        /* =========================
+           RESET & GENERAL
+        ========================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 75px;
+        }
+
+        body {
+            background:
+                radial-gradient(
+                    circle at top,
+                    #172d52 0%,
+                    #081426 45%,
+                    #030812 100%
+                );
+
+            color: white;
+            font-family: "Poppins", sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* =========================
+           BACKGROUND FLOATING HEARTS
+        ========================== */
+
+        .hearts {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .heart {
+            position: absolute;
+            color: rgba(125, 177, 255, 0.35);
+            animation: floating 8s linear infinite;
+        }
+
+        @keyframes floating {
+            0% {
+                transform: translateY(110vh) rotate(0deg);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-10vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* =========================
+           NAVBAR
+        ========================== */
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 18px 8%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+
+            background: rgba(3, 8, 18, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+
+            z-index: 100;
+        }
+
+        .logo {
+            flex-shrink: 0;
+            font-family: "Cormorant Garamond", serif;
+            font-size: 26px;
+            color: #dbeaff;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        nav a {
+            color: #c7d8ef;
+            text-decoration: none;
+            font-size: 13px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffb9d2;
+        }
+
+        /* =========================
+           GENERAL SECTION
+        ========================== */
+
+        section {
+            min-height: 100vh;
+            padding: 120px 8%;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* =========================
+           OPENING
+        ========================== */
+
+        #home {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(66, 117, 190, 0.25),
+                    transparent 45%
+                );
+        }
+
+        .opening {
+            width: 100%;
+            max-width: 700px;
+        }
+
+        .opening-heart {
+            font-size: 90px;
+            color: #ffb5ce;
+
+            filter:
+                drop-shadow(0 0 20px rgba(255, 150, 190, .7));
+
+            animation: heartbeat 1.8s infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.15);
+            }
+        }
+
+        .opening h1 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(55px, 9vw, 100px);
+            font-weight: 500;
+            color: #e9f3ff;
+        }
+
+        .opening p {
+            margin: 20px 0 35px;
+            color: #aebfd5;
+            font-size: 14px;
+        }
+
+        .open-btn {
+            display: inline-block;
+            padding: 13px 30px;
+
+            border: 1px solid #769bd0;
+            border-radius: 30px;
+
+            color: white;
+            font-family: "Poppins", sans-serif;
+            font-size: 14px;
+
+            background: rgba(64, 111, 175, 0.25);
+
+            cursor: pointer;
+            transition: .4s;
+        }
+
+        .open-btn:hover {
+            background: #668fc9;
+            box-shadow: 0 0 25px rgba(104, 155, 230, .6);
+            transform: translateY(-3px);
+        }
+
+        /* =========================
+           MAIN MESSAGE
+        ========================== */
+
+        #message {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .message-box {
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .small-title {
+            color: #8fb7eb;
+            letter-spacing: 4px;
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+
+        .message-box h2 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(40px, 6vw, 60px);
+            margin: 20px 0;
+            color: #e9f3ff;
+        }
+
+        .message-box p {
+            line-height: 2;
+            color: #b7c6d9;
+            font-size: 15px;
+        }
+
+        .signature {
+            margin-top: 30px;
+            color: #ffb5ce;
+            font-family: "Cormorant Garamond", serif;
+            font-size: 28px;
+        }
+
+        /* =========================
+           LOVE LETTER
+        ========================== */
+
+        #letter {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .letter {
+            position: relative;
+            width: 100%;
+            max-width: 700px;
+            padding: 55px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #f4f7fc,
+                    #dce6f2
+                );
+
+            color: #18263a;
+
+            box-shadow:
+                0 30px 80px rgba(0, 0, 0, .45);
+
+            border-radius: 3px;
+            transform: rotate(-1deg);
+        }
+
+        .letter::before {
+            content: "♡";
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            font-size: 35px;
+            color: #8ba9d1;
+        }
+
+        .letter h2 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(30px, 5vw, 42px);
+            margin-bottom: 25px;
+            padding-right: 15px;
+        }
+
+        .letter p {
+            line-height: 2;
+            font-size: 14px;
+            text-align: justify;
+        }
+
+        /* =========================
+           LOVE ANIMATION
+        ========================== */
+
+        #gallery {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .love-section {
+            width: 100%;
+            max-width: 700px;
+            text-align: center;
+        }
+
+        #gallery h2 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(42px, 6vw, 60px);
+            color: #e9f3ff;
+            margin: 15px 0 5px;
+        }
+
+        .gallery-subtitle {
+            color: #9eb1c9;
+            font-size: 13px;
+            margin-bottom: 20px;
+        }
+
+        .love-animation {
+            position: relative;
+            width: 420px;
+            height: 420px;
+            max-width: 100%;
+            margin: 15px auto;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* MAIN HEART */
+
+        .big-heart {
+            position: relative;
+            z-index: 5;
+
+            font-size: 130px;
+            line-height: 1;
+            color: #ffb5ce;
+
+            filter:
+                drop-shadow(0 0 15px rgba(255, 150, 190, .8))
+                drop-shadow(0 0 45px rgba(90, 150, 255, .5));
+
+            animation: bigHeartbeat 1.5s ease-in-out infinite;
+        }
+
+        @keyframes bigHeartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+
+            25% {
+                transform: scale(1.08);
+            }
+
+            40% {
+                transform: scale(1);
+            }
+
+            60% {
+                transform: scale(1.13);
+            }
+
+            80% {
+                transform: scale(1);
+            }
+        }
+
+        /* SMALL FLOATING HEARTS */
+
+        .mini-heart {
+            position: absolute;
+            z-index: 4;
+
+            color: #ffb5ce;
+            font-size: 25px;
+
+            filter:
+                drop-shadow(0 0 10px rgba(255, 150, 190, .7));
+
+            animation: floatingHeart 4s ease-in-out infinite;
+        }
+
+        .h1 {
+            top: 60px;
+            left: 80px;
+        }
+
+        .h2 {
+            top: 100px;
+            right: 70px;
+            animation-delay: .7s;
+        }
+
+        .h3 {
+            top: 190px;
+            left: 35px;
+            animation-delay: 1.3s;
+        }
+
+        .h4 {
+            top: 280px;
+            left: 80px;
+            animation-delay: 2s;
+        }
+
+        .h5 {
+            top: 330px;
+            right: 100px;
+            animation-delay: .5s;
+        }
+
+        .h6 {
+            top: 220px;
+            right: 25px;
+            animation-delay: 1.8s;
+        }
+
+        .h7 {
+            top: 45px;
+            left: 190px;
+            animation-delay: 2.5s;
+        }
+
+        .h8 {
+            bottom: 35px;
+            left: 190px;
+            animation-delay: 1s;
+        }
+
+        @keyframes floatingHeart {
+            0%, 100% {
+                transform: translateY(0) scale(1);
+                opacity: .5;
+            }
+
+            50% {
+                transform: translateY(-18px) scale(1.3);
+                opacity: 1;
+            }
+        }
+
+        /* BLUE GLOW RINGS */
+
+        .heart-ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+
+            border-radius: 50%;
+            border: 1px solid rgba(120, 170, 240, .3);
+
+            transform: translate(-50%, -50%) scale(.5);
+            pointer-events: none;
+
+            animation: heartPulse 4s ease-out infinite;
+        }
+
+        .ring1 {
+            width: 180px;
+            height: 180px;
+        }
+
+        .ring2 {
+            width: 260px;
+            height: 260px;
+            animation-delay: 1.2s;
+        }
+
+        .ring3 {
+            width: 350px;
+            height: 350px;
+            animation-delay: 2.4s;
+        }
+
+        @keyframes heartPulse {
+            0% {
+                transform: translate(-50%, -50%) scale(.4);
+                opacity: 0;
+            }
+
+            30% {
+                opacity: .8;
+            }
+
+            100% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 0;
+            }
+        }
+
+        /* LOVE TEXT */
+
+        .love-text {
+            color: #b7c6d9;
+            line-height: 2;
+            font-size: 14px;
+            margin-top: 5px;
+
+            animation: textGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes textGlow {
+            0%, 100% {
+                opacity: .7;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+        /* =========================
+           SONG PLAYER
+        ========================== */
+
+        #song {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .music-card {
+            width: 400px;
+            max-width: 100%;
+            padding: 40px;
+
+            border-radius: 25px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(31, 57, 94, .7),
+                    rgba(8, 20, 38, .85)
+                );
+
+            border: 1px solid rgba(145, 181, 230, .2);
+
+            box-shadow:
+                0 30px 70px rgba(0, 0, 0, .4);
+        }
+
+        .album {
+            width: 180px;
+            height: 180px;
+            margin: auto;
+
+            border-radius: 50%;
+            overflow: hidden;
+
+            border: 4px solid rgba(255, 255, 255, .8);
+
+            animation: spin 12s linear infinite;
+            animation-play-state: paused;
+        }
+
+        .album.playing {
+            animation-play-state: running;
+        }
+
+        .album img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .music-card h3 {
+            margin-top: 25px;
+            font-family: "Cormorant Garamond", serif;
+            font-size: 30px;
+        }
+
+        .music-card p {
+            color: #9eb1c9;
+            font-size: 12px;
+            margin: 5px 0 25px;
+        }
+
+        #playBtn {
+            width: 55px;
+            height: 55px;
+
+            border: none;
+            border-radius: 50%;
+
+            background: #789ed4;
+            color: white;
+
+            font-size: 20px;
+            cursor: pointer;
+
+            box-shadow:
+                0 0 25px rgba(120, 158, 212, .5);
+
+            transition: .3s;
+        }
+
+        #playBtn:hover {
+            transform: scale(1.08);
+            background: #91b7ed;
+        }
+
+        /* =========================
+           ENDING
+        ========================== */
+
+        #ending {
+            min-height: 80vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+        }
+
+        .ending h2 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(55px, 8vw, 90px);
+            color: #e9f3ff;
+        }
+
+        .ending p {
+            color: #aebfd5;
+            margin-top: 20px;
+            line-height: 2;
+            font-size: 14px;
+        }
+
+        .ending-heart {
+            margin-top: 30px;
+            font-size: 40px;
+            color: #ffb5ce;
+            animation: heartbeat 1.8s infinite;
+        }
+
+        /* =========================
+           TABLET
+        ========================== */
+
+        @media (max-width: 900px) {
+
+            nav {
+                padding: 16px 5%;
+            }
+
+            .nav-links {
+                gap: 15px;
+            }
+
+            section {
+                padding-left: 6%;
+                padding-right: 6%;
+            }
+
+            .letter {
+                padding: 45px;
+            }
+        }
+
+        /* =========================
+           MOBILE / HP
+        ========================== */
+
+        @media (max-width: 600px) {
+
+            html {
+                scroll-padding-top: 90px;
+            }
+
+            nav {
+                padding: 12px 5%;
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .logo {
+                font-size: 23px;
+            }
+
+            .nav-links {
+                width: 100%;
+                justify-content: center;
+                gap: clamp(12px, 4vw, 22px);
+                overflow-x: auto;
+                white-space: nowrap;
+                padding-bottom: 3px;
+                scrollbar-width: none;
+            }
+
+            .nav-links::-webkit-scrollbar {
+                display: none;
+            }
+
+            nav a {
+                font-size: 11px;
+                margin: 0;
+                flex-shrink: 0;
+            }
+
+            section {
+                min-height: 100svh;
+                padding: 115px 6% 65px;
+            }
+
+            #home {
+                min-height: 100svh;
+            }
+
+            .opening-heart {
+                font-size: 75px;
+            }
+
+            .opening h1 {
+                font-size: clamp(55px, 15vw, 75px);
+            }
+
+            .opening p {
+                font-size: 12px;
+            }
+
+            .open-btn {
+                padding: 12px 25px;
+                font-size: 13px;
+            }
+
+            .message-box h2 {
+                font-size: 42px;
+            }
+
+            .message-box p {
+                font-size: 13px;
+                line-height: 2;
+            }
+
+            .small-title {
+                font-size: 10px;
+                letter-spacing: 3px;
+            }
+
+            /* LOVE LETTER MOBILE */
+
+            #letter {
+                padding-top: 110px;
+                padding-bottom: 80px;
+            }
+
+            .letter {
+                padding: 40px 25px;
+                transform: none;
+            }
+
+            .letter h2 {
+                font-size: 32px;
+                line-height: 1.2;
+                margin-bottom: 22px;
+            }
+
+            .letter p {
+                font-size: 12px;
+                line-height: 2;
+                text-align: left;
+                overflow-wrap: break-word;
+            }
+
+            .letter::before {
+                top: 10px;
+                right: 15px;
+                font-size: 28px;
+            }
+
+            /* LOVE ANIMATION MOBILE */
+
+            #gallery h2 {
+                font-size: 45px;
+            }
+
+            .gallery-subtitle {
+                font-size: 11px;
+            }
+
+            .love-animation {
+                width: min(100%, 360px);
+                height: 350px;
+                margin: 10px auto;
+                transform: none;
+            }
+
+            .big-heart {
+                font-size: 105px;
+            }
+
+            .mini-heart {
+                font-size: 20px;
+            }
+
+            .h1 {
+                top: 45px;
+                left: 45px;
+            }
+
+            .h2 {
+                top: 75px;
+                right: 40px;
+            }
+
+            .h3 {
+                top: 165px;
+                left: 15px;
+            }
+
+            .h4 {
+                top: 245px;
+                left: 50px;
+            }
+
+            .h5 {
+                top: 275px;
+                right: 55px;
+            }
+
+            .h6 {
+                top: 185px;
+                right: 10px;
+            }
+
+            .h7 {
+                top: 30px;
+                left: 160px;
+            }
+
+            .h8 {
+                bottom: 20px;
+                left: 160px;
+            }
+
+            .ring1 {
+                width: 145px;
+                height: 145px;
+            }
+
+            .ring2 {
+                width: 220px;
+                height: 220px;
+            }
+
+            .ring3 {
+                width: 300px;
+                height: 300px;
+            }
+
+            .love-text {
+                font-size: 12px;
+                padding: 0 10px;
+            }
+
+            /* MUSIC MOBILE */
+
+            .music-card {
+                width: 100%;
+                padding: 35px 20px;
+            }
+
+            .album {
+                width: 155px;
+                height: 155px;
+            }
+
+            .music-card h3 {
+                font-size: 28px;
+            }
+
+            /* ENDING MOBILE */
+
+            #ending {
+                min-height: 75svh;
+            }
+
+            .ending h2 {
+                font-size: clamp(48px, 13vw, 65px);
+            }
+
+            .ending p {
+                font-size: 12px;
+            }
+
+            .ending-heart {
+                font-size: 35px;
+            }
+        }
+
+        /* =========================
+           VERY SMALL PHONE
+        ========================== */
+
+        @media (max-width: 360px) {
+
+            nav a {
+                font-size: 10px;
+            }
+
+            .nav-links {
+                gap: 11px;
+            }
+
+            .letter {
+                padding: 35px 20px;
+            }
+
+            .letter h2 {
+                font-size: 29px;
+            }
+
+            .love-animation {
+                transform: scale(.92);
+                transform-origin: center;
+                margin-top: -5px;
+                margin-bottom: -5px;
+            }
+        }
+
+        /* =========================
+           REDUCE ANIMATION
+        ========================== */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- BACKGROUND HEARTS -->
+
+    <div class="hearts" id="hearts"></div>
+
+
+    <!-- NAVBAR -->
+
+    <nav>
+
+        <div class="logo">♡ For You</div>
+
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#message">Message</a>
+            <a href="#letter">Letter</a>
+            <a href="#gallery">Love</a>
+            <a href="#song">Song</a>
+        </div>
+
+    </nav>
+
+
+    <!-- OPENING -->
+
+    <section id="home">
+
+        <div class="opening">
+
+            <div class="opening-heart">♡</div>
+
+            <h1>For You</h1>
+
+            <p>
+                There's something I want you to know...
+            </p>
+
+            <button
+                type="button"
+                class="open-btn"
+                id="openBtn"
+            >
+                Click to Open ♡
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- MAIN MESSAGE -->
+
+    <section id="message">
+
+        <div class="message-box">
+
+            <div class="small-title">
+                A Little Something
+            </div>
+
+            <h2>
+                I Just Want You To Know...
+            </h2>
+
+            <p>
+                Dari sekian banyak orang yang pernah hadir,
+                entah bagaimana kamu menjadi seseorang
+                yang memiliki tempat tersendiri.
+
+                <br><br>
+
+                Terima kasih untuk setiap percakapan,
+                setiap tawa, dan setiap momen kecil
+                yang mungkin terlihat sederhana,
+                tetapi berarti.
+            </p>
+
+            <div class="signature">
+                With love, ♡
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- LOVE LETTER -->
+
+    <section id="letter">
+
+        <div class="letter">
+
+            <h2>A Little Thank You, Dear You. ♡</h2>
+
+            <p>
+                Terima kasih sudah hadir dan menjadi bagian
+                dari cerita ini. Terima kasih untuk setiap
+                waktu yang diluangkan, setiap percakapan
+                yang tercipta, setiap tawa yang dibagikan,
+                dan hal-hal sederhana yang mungkin tidak
+                selalu disadari, tetapi memiliki arti
+                tersendiri bagiku.
+
+                <br><br>
+
+                Aku tidak tahu bagaimana hari-harimu sebelum
+                kita saling mengenal, tetapi aku senang
+                karena pada suatu waktu, jalan kita pernah
+                bertemu. Mungkin ada banyak hal yang tidak
+                sempat terucap, banyak cerita yang belum
+                sempat dibagikan, dan banyak momen sederhana
+                yang ternyata menjadi sesuatu yang ingin
+                kuingat lebih lama.
+
+                <br><br>
+
+                Terima kasih karena telah menjadi dirimu
+                sendiri. Untuk segala kebaikan, perhatian,
+                dan kehadiranmu, aku benar-benar
+                menghargainya.
+
+                <br><br>
+
+                Aku tidak berharap semua hal harus selalu
+                berjalan sempurna. Aku hanya berharap
+                semoga kehidupan selalu memberikan banyak
+                alasan untukmu tersenyum, semoga segala hal
+                yang sedang kamu perjuangkan menemukan
+                jalannya, dan semoga kamu selalu dikelilingi
+                oleh hal-hal baik.
+
+                <br><br>
+
+                Jika suatu hari nanti waktu membawa kita
+                pada cerita yang berbeda, aku harap kamu
+                tetap mengingat bahwa pernah ada seseorang
+                yang begitu menghargai kehadiranmu.
+
+                <br><br>
+
+                Thank you for being part of my little universe.
+
+                <br><br>
+
+                From your little princess, ♡
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- LOVE ANIMATION -->
+
+    <section id="gallery">
+
+        <div class="love-section">
+
+            <div class="small-title">
+                Just For You
+            </div>
+
+            <h2>A Little Love ♡</h2>
+
+            <p class="gallery-subtitle">
+                Some feelings are better felt than explained.
+            </p>
+
+            <div class="love-animation">
+
+                <div class="big-heart">♥</div>
+
+                <span class="mini-heart h1">♡</span>
+                <span class="mini-heart h2">♥</span>
+                <span class="mini-heart h3">♡</span>
+                <span class="mini-heart h4">♥</span>
+                <span class="mini-heart h5">♡</span>
+                <span class="mini-heart h6">♥</span>
+                <span class="mini-heart h7">♡</span>
+                <span class="mini-heart h8">♥</span>
+
+                <div class="heart-ring ring1"></div>
+                <div class="heart-ring ring2"></div>
+                <div class="heart-ring ring3"></div>
+
+            </div>
+
+            <p class="love-text">
+                No matter where life takes us,<br>
+                I hope you always remember<br>
+                that you are someone special. ♡
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- SONG -->
+
+    <section id="song">
+
+        <div class="music-card">
+
+            <div class="album" id="album">
+
+                <img
+                    src="images (3).jpg"
+                    alt="Song cover"
+                >
+
+            </div>
+
+            <h3 id="songTitle">
+                Our Song
+            </h3>
+
+            <p>
+                A song that reminds me of you ♡
+            </p>
+
+            <button
+                id="playBtn"
+                type="button"
+                aria-label="Play music"
+            >
+                ▶
+            </button>
+
+            <audio id="music" loop preload="auto">
+                <source src="shape of my heart.mp3" type="audio/mpeg">
+            </audio>
+
+        </div>
+
+    </section>
+
+
+    <!-- ENDING -->
+
+    <section id="ending">
+
+        <div class="ending">
+
+            <h2>
+                Thank You<br>
+                For Being You.
+            </h2>
+
+            <p>
+                May this story always be something beautiful to remember.
+            </p>
+
+            <div class="ending-heart">
+                ♡ ♥ ♡
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        /* =========================
+           BACKGROUND FLOATING HEARTS
+        ========================== */
+
+        const heartContainer = document.getElementById("hearts");
+
+        function createHeart() {
+
+            const heart = document.createElement("div");
+
+            heart.className = "heart";
+
+            heart.textContent =
+                Math.random() > 0.5 ? "♡" : "♥";
+
+            heart.style.left =
+                Math.random() * 100 + "%";
+
+            heart.style.animationDuration =
+                (5 + Math.random() * 6) + "s";
+
+            heart.style.fontSize =
+                (10 + Math.random() * 20) + "px";
+
+            heartContainer.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 11000);
+        }
+
+        setInterval(createHeart, 700);
+
+
+        /* =========================
+           MUSIC PLAYER
+        ========================== */
+
+        const music = document.getElementById("music");
+
+        const playBtn = document.getElementById("playBtn");
+
+        const album = document.getElementById("album");
+
+        const openBtn = document.getElementById("openBtn");
+
+
+        /* UPDATE MUSIC BUTTON */
+
+        function updateMusicButton(isPlaying) {
+
+            if (isPlaying) {
+
+                playBtn.textContent = "❚❚";
+
+                playBtn.setAttribute(
+                    "aria-label",
+                    "Pause music"
+                );
+
+                album.classList.add("playing");
+
+            } else {
+
+                playBtn.textContent = "▶";
+
+                playBtn.setAttribute(
+                    "aria-label",
+                    "Play music"
+                );
+
+                album.classList.remove("playing");
+            }
+        }
+
+
+        /* CLICK TO OPEN + PLAY MUSIC */
+
+        openBtn.addEventListener("click", async function () {
+
+            music.volume = 0.7;
+
+            try {
+
+                await music.play();
+
+                updateMusicButton(true);
+
+            } catch (error) {
+
+                updateMusicButton(false);
+
+                console.log(
+                    "Musik gagal diputar. Periksa file MP3."
+                );
+
+            }
+
+            document.getElementById("message").scrollIntoView({
+                behavior: "smooth"
+            });
+
+        });
+
+
+        /* PLAY & PAUSE BUTTON */
+
+        playBtn.addEventListener("click", async function () {
+
+            if (music.paused) {
+
+                try {
+
+                    music.volume = 0.7;
+
+                    await music.play();
+
+                    updateMusicButton(true);
+
+                } catch (error) {
+
+                    console.error(
+                        "Musik tidak dapat diputar:",
+                        error
+                    );
+
+                    alert(
+                        "Musik belum dapat diputar. Pastikan file MP3 tersedia."
+                    );
+
+                }
+
+            } else {
+
+                music.pause();
+
+                updateMusicButton(false);
+
+            }
+
+        });
+
+
+        /* AUDIO EVENTS */
+
+        music.addEventListener("play", function () {
+            updateMusicButton(true);
+        });
+
+        music.addEventListener("pause", function () {
+            updateMusicButton(false);
+        });
+
+        music.addEventListener("ended", function () {
+            updateMusicButton(false);
+        });
+
+        music.addEventListener("error", function () {
+
+            updateMusicButton(false);
+
+            console.error(
+                "File musik tidak ditemukan atau tidak dapat dibaca."
+            );
+
+        });
+
+    </script>
+
+</body>
+</html>
